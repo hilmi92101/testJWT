@@ -37,4 +37,10 @@ Route::group([
     // misc
     Route::post('passwordGenerator', 'AuthController@passwordGenerator');
 
+
+    Route::post('superadmin/login', 'Superadmin\AuthController@login');
+    Route::post('superadmin/checkToken', 'Superadmin\AuthController@checkToken');
+    Route::post('superadmin/logout', 'Superadmin\AuthController@logout');
+    Route::post('superadmin', 'Superadmin\AdminController@index');
+
 });
