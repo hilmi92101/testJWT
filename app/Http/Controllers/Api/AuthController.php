@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -36,6 +37,7 @@ class AuthController extends Controller
         return response()->json([
 			"success" => true,
 			"token" => $token,
+            "user" => Auth::user(),
 		], 200); 
     }
 
